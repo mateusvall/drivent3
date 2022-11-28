@@ -39,7 +39,7 @@ describe("GET /hotels", () => {
   });
 
   describe("when token is valid", () => {
-    it("should respond with status 204 when there is no enrollment for given user", async () => {
+    it("should respond with status 204 when there is no paid ticket for given user", async () => {
       const token = await generateValidToken();
       
       const response = await server.get("/hotels").set("Authorization", `Bearer ${token}`);
@@ -88,7 +88,7 @@ describe("GET /hotels/:hotelId", () => {
   });
 
   describe("when token is valid", () => {
-    it("should respond with status 204 when there is no enrollment for given user", async () => {
+    it("should respond with status 204 when there is no hotel for given hotelId", async () => {
       const token = await generateValidToken();
       
       const response = await server.get("/hotels/1").set("Authorization", `Bearer ${token}`);
